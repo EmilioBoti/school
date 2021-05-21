@@ -1,0 +1,28 @@
+CREATE TABLE student(
+	id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    	name varchar(30) not null,
+    	lastname1 varchar(40) not null,
+	lastname2 varchar(40) not null,
+);
+CREATE TABLE UF(
+	id int(11) NOT null PRIMARY KEY AUTO_INCREMENT,
+    	title varchar(50) not null,
+	id_teacher int(11)
+);
+CREATE TABLE matricula(
+    	id_student int(11) not null,
+   	id_UF int(11) not null,
+    	score float 
+);
+ALTER TABLE matricula ADD CONSTRAINT FK_student FOREIGN KEY (id_student) REFERENCES student(id);
+ALTER TABLE matricula ADD CONSTRAINT FK_UF FOREIGN KEY (id_UF) REFERENCES UF(id);
+
+CREATE TABLE teacher(
+	id int(11) not null PRIMARY KEY AUTO_INCREMENT,
+    name varchar(30) not null,
+    lastname1 varchar(40) not null,
+    lastname2 varchar(40) not null,
+);
+
+ALTER TABLE UF ADD CONSTRAINT FK_teacherid FOREIGN KEY (id_teacher) REFERENCES teacher(id);
+
