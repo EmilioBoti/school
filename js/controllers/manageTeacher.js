@@ -12,8 +12,8 @@ const manageTeacher = ()=>{
     const div = assignament()
     box1.append(div)
     
-    const idUf = []
     let codeT
+    const idUf = []
 
     //cargamos las UFs del profesor 
     box2.addEventListener("click", (e)=>{

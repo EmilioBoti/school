@@ -67,7 +67,6 @@ function manageEvaluation(){
             if(this.readyState === 4 && this.status === 200){
                 const obj = JSON.parse(this.responseText)
                 alert(obj.message)
-                //console.log(obj)
             }
         }
     })
@@ -86,7 +85,7 @@ function manageEvaluation(){
             
         const ob = {"code": codeSt }
         const requF = new XMLHttpRequest()
-        console.log(ob)
+
         requF.onreadystatechange = getUfStudent
         requF.open("POST", `http://localhost/studies/backend/uf/ufStudent.php/`)
         requF.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
@@ -95,10 +94,9 @@ function manageEvaluation(){
         function getUfStudent(){
             if(this.readyState === 4 && this.status === 200){
                 const obj = JSON.parse(this.responseText)
-                console.log(obj)
                 
                 if(obj === null ){
-                    console.warn("Any student has not  been added.")
+                    console.info("Any UF has not  been added.")
                 }else{
                     dataStudent.innerHTML = `
                         <h6>Nombre: ${obj[0].stname}</h6>

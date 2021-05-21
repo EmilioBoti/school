@@ -21,7 +21,6 @@ function manageUf(){
         function addUf(){
             if(this.readyState === 4 && this.status === 200){
                 const obj = JSON.parse(this.responseText)
-                // console.log(obj)
                 matriculate()
                 box2.innerHTML = getUfAll()
             }
@@ -44,9 +43,7 @@ function getUfAll(){
             div.innerHTML ="<h3>Lista de UFs</h3>"
             box2.append(div)
 
-            obj.forEach(e => { 
-               box2.innerHTML += templeofUf(e) 
-            })
+            obj.forEach(e  =>  box2.innerHTML += templeofUf(e) )
         }
     }
 }

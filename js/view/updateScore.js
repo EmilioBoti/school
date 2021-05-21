@@ -3,9 +3,7 @@ import { box1, box2 } from "../index.js"
     
 function ufStudent(codeSt){
 
-    const ob = {
-        "code": codeSt
-    }
+    const ob = { "code": codeSt }
     const req = new XMLHttpRequest()
         
     req.onreadystatechange = getUfStudent

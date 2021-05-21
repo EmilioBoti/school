@@ -6,7 +6,7 @@
     $lastname2 = $_POST['lastname2'];
     $aula = $_POST['aula'];
 
-    if( $name != "" && $lastname1 != "" && $lastname2 != "" && $aula != ""){
+    if( $name != "" && $lastname1 != "" && $lastname2 != ""){
         $flag =  addStudents($name, $lastname1, $lastname2,$aula, $conn);
 
         if($flag){
@@ -26,7 +26,7 @@
         $result = $isExist->fetch_object();
         
         if($result == null){
-            $sqlquery = "INSERT INTO student (name, lastname1, lastname2, aulaId) value('$name', '$lastname1', '$lastname2', '$aula')";
+            $sqlquery = "INSERT INTO student (name, lastname1, lastname2, aulaId) value('$name', '$lastname1', '$lastname2', $aula)";
             $conn->query($sqlquery);
             $flag = true;
             //echo (json_encode([ "name"=>"$name"]));

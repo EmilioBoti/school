@@ -21,7 +21,7 @@ function getStudent(flag){
             const obj = JSON.parse(this.responseText)
             const form = document.createElement("div")
             form.innerHTML = `<h3>Lista de Profesores</h3>`
-            console.log(obj)
+
             if(flag === num1){
                 obj.forEach(e => {  box1.innerHTML += templeofUser(e)  })
             }

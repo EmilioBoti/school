@@ -8,7 +8,6 @@
 
     while($row = $result->fetch_object()){
        $student[] = new Student($row->id,$row->name,$row->lastname1, $row->lastname2, $row->aulaNombre);
-        // echo  json_encode ($row);
     }
     echo($connect->connect_error);
     echo(json_encode($student));

@@ -1,4 +1,4 @@
-import { container, box2, box1 } from "../index.js"
+import {  box1 } from "../index.js"
 import { form } from "../view/forms.js"
 import { getStudent } from "./getStudent.js"
 
@@ -22,7 +22,6 @@ function manageStudent(){
 function addStudent(f){
     
     const ft = new FormData(f)
-    
     const reqAddSt = new XMLHttpRequest()
 
     reqAddSt.onreadystatechange = addingStudent
@@ -68,8 +67,6 @@ function getAulas(){
 }
 function addingUfs(object){
 
-   // const ft = new FormData(f)
-    
     const reqAddSt = new XMLHttpRequest()
 
     reqAddSt.onreadystatechange = addingUf
