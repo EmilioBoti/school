@@ -31,7 +31,6 @@ function manageEvaluation(){
     form.innerHTML = boardScore   
     box2.append(form)
     
-
     const uf = document.getElementById("uf-student")
     const u = document.getElementById("score")
     const dataStudent = document.getElementById("data-student")

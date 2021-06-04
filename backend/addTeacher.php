@@ -13,7 +13,7 @@
     
     function addTeacher($name, $lastname1, $lastname2, $conn){
         
-        $isExit = $conn->query("SELECT * FROM student where lastname1 = '$lastname2'");
+        $isExit = $conn->query("SELECT * FROM teacher where lastname1 = '$lastname1'");
         $result = $isExit->fetch_object();
         
         if($result == null){

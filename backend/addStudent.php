@@ -14,7 +14,6 @@
             $resu = $isExist->fetch_object();
             echo json_encode($resu);
         }
-        // addUfStudent($codeStudent, $conn);
     }else echo(json_encode(["massange"=>"All field must be fill."])); 
 
     

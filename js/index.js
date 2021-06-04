@@ -3,7 +3,6 @@ import {  manageUf } from "./controllers/manageUf.js"
 import {  manageTeacher  } from "./controllers/manageTeacher.js"
 import { manageEvaluation } from "./controllers/manageEvaluation.js"
 
-
 const container = document.getElementById("container")
 const box1 = document.getElementById("first-box")
 const box2 = document.getElementById("second-box")
@@ -28,6 +27,4 @@ const evaluation = document.getElementById("evaluation")
 evaluation.addEventListener("click", ()=>{
   manageEvaluation()
 })
-
-// ufStudent()
 export { container, box2, box1 }
