@@ -2,7 +2,6 @@
     
     $conn = include "./db.php";
 
-    // $code = $_GET['code'];
     $idU = file_get_contents("php://input");
     $code = json_decode($idU);
 
@@ -20,7 +19,6 @@
         $uf = array();  
 
         while($row = $result->fetch_object()){
-            // $u = json_encode($row);
             $uf[] = json_decode(json_encode($row));
         }
         $result->free();

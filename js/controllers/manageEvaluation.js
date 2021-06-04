@@ -5,7 +5,6 @@ function manageEvaluation(){
     
     box1.innerHTML = ""
     box2.innerHTML = ""
-    
     let codeSt = 1;
     
     getStudent(1) //cargamos los Alumnos

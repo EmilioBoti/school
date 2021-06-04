@@ -15,7 +15,7 @@ header{
 #container{
     min-width: 50em;
     padding: 0em;
-     margin: 2em 1em; 
+    margin: 2em 1em; 
     display: grid;
     grid-template-columns: auto auto;
     /* justify-content: space-between; */

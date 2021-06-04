@@ -6,12 +6,11 @@
 
     $uf = $objec->id_ufs;
     $val = $objec->values;
-
+     
     for($i = 0; $i < count($uf); $i++){
         $sqlQuery = "UPDATE matricula SET score = '$val[$i]' WHERE id_student = '$objec->codeSt' AND id_uf = '$uf[$i]'";
         $conn->query($sqlQuery);
     }
     echo json_encode(["message"=>"Ha actualizado correctamente."]);
-    //echo json_encode($objec);
     $conn->close();
 ?>

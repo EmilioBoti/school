@@ -3,8 +3,9 @@ import { form, templeofUf } from "../view/forms.js"
 import { getTeachers } from "../controllers/getTeachers.js"
 import { assignament } from "../view/formUF.js"
 
+
 const manageTeacher = ()=>{
-    
+        
     getTeachers() //cargamos el listado de profesores
     loadUassignedUf()//cargamos las UF no asignadas
 
@@ -43,15 +44,18 @@ const manageTeacher = ()=>{
             }
         }
     })
-
     const assign = document.getElementById("assign-box")
     //añadimos UF seleccionada a las uf del profesor
     const unassigned = document.getElementById("unassigned-box")
     unassigned.addEventListener("click", (e)=>{
         let code = e.target
 
-        if(code.dataset.id) assign.appendChild(code)
-        if(!idUf.includes(code)){ idUf.push(Number(code.dataset.id)) }
+        if(code.dataset.id)
+             assign.appendChild(code)
+
+        if(!idUf.includes(code)){
+             idUf.push(Number(code.dataset.id)
+        )}
     })
     
     //añadimos UF profesores en la base de datos
@@ -62,6 +66,7 @@ const manageTeacher = ()=>{
             "teacherId": codeT,
             "ufs_id": idUf
         }
+        
         const req = new XMLHttpRequest()
 
         req.onreadystatechange = sendData

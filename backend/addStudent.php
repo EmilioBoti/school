@@ -12,7 +12,6 @@
         if($flag){
             $isExist = $conn->query("SELECT * FROM student WHERE lastname1 = '$lastname1'");
             $resu = $isExist->fetch_object();
-            // $j = strval($resu);
             echo json_encode($resu);
         }
         // addUfStudent($codeStudent, $conn);
@@ -29,7 +28,6 @@
             $sqlquery = "INSERT INTO student (name, lastname1, lastname2, aulaId) value('$name', '$lastname1', '$lastname2', $aula)";
             $conn->query($sqlquery);
             $flag = true;
-            //echo (json_encode([ "name"=>"$name"]));
         }else{
             echo(json_encode(null));
         }

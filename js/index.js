@@ -1,4 +1,4 @@
-import {  manageStudent } from "./controllers/manageStudent.js"
+import {  manageStudent  } from "./controllers/manageStudent.js"
 import {  manageUf } from "./controllers/manageUf.js"
 import {  manageTeacher  } from "./controllers/manageTeacher.js"
 import { manageEvaluation } from "./controllers/manageEvaluation.js"
@@ -30,4 +30,4 @@ evaluation.addEventListener("click", ()=>{
 })
 
 // ufStudent()
-export { container,box2,box1 }
+export { container, box2, box1 }

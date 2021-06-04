@@ -16,7 +16,7 @@
         if($row == null){
             $conn->query("INSERT INTO uf (title) VALUES('$title')");
             echo json_encode(["UF_title"=>$title]);
-        }else echo json_encode(["messange"=>"the UF is already added."]);
+        }else echo json_encode(null);
         
         echo($conn->connect_error);
     

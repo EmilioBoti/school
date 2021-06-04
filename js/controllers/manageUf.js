@@ -21,7 +21,8 @@ function manageUf(){
         function addUf(){
             if(this.readyState === 4 && this.status === 200){
                 const obj = JSON.parse(this.responseText)
-                matriculate()
+               
+                if(obj !== null)  matriculate() 
                 box2.innerHTML = getUfAll()
             }
         }

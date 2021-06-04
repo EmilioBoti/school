@@ -3,6 +3,7 @@
     include "./student.php";
 
     $sqlQuery = "SELECT student.id as id, student.name as name, student.lastname1 as lastname1, student.lastname2 as lastname2, aulas.nombre as aulaNombre FROM student INNER JOIN aulas ON student.aulaId = aulas.id";
+    
     $result = $connect->query($sqlQuery);
     $student = array();
 

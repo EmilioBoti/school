@@ -9,9 +9,8 @@
     $result = $conn->query($sqlQuery);
 
     while($row = $result->fetch_object()){
-       $insertData = "INSERT INTO matricula (id_student, id_UF, score) VALUES ( '$json->id'  ,'$row->id' ,0)";
+       $insertData = "INSERT INTO matricula  (id_student, id_UF, score) VALUES ( '$json->id'  ,'$row->id' ,0)";
        $conn->query($insertData);
     }
     //echo json_encode(["message"=>"good"]);
-
 ?>
