@@ -1,10 +1,13 @@
-import { box1, box2 } from "../index.js"
+import {assignamentContainer, box1, box2 } from "../index.js"
 import { getStudent } from "./getStudent.js"
 
 function manageEvaluation(){
     
     box1.innerHTML = ""
     box2.innerHTML = ""
+    assignamentContainer.innerHTML = ""
+    box1.classList.add("scrollBox")
+    
     let codeSt = 1;
     
     getStudent(1) //cargamos los Alumnos

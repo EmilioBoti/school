@@ -4,7 +4,7 @@ const form = (name)=>{
 
     const  stForm  = `
         <form  method="POST" name="form" id="form" class="grid-items">
-            <h3 id="title">Registrar ${name}</h3>
+            <h2 id="title">Registrar ${name}</h2>
             <div class="grid-items-form">
                 <input type="text" class="fields" id="name" name="name" placeholder="Name" required >
             </div>
@@ -14,7 +14,7 @@ const form = (name)=>{
             <div class="grid-items-form">
                 <input type="text" class="fields" id="lastname2" name="lastname2" placeholder="Segundo Apellido" required >
             </div>
-            <div id = "aulas"></div>
+            <div id = "aulas" class="grid-items-form"></div>
             <div class="grid-items-form">
                 <input type="submit" value="Alta" id="send" class="send">
             </div>

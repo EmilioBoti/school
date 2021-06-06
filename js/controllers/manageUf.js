@@ -1,9 +1,10 @@
-import {  box2, box1 } from "../index.js"
+import {  assignamentContainer,box2, box1 } from "../index.js"
 import { templeofUf, formUf } from "../view/forms.js"
 
 function manageUf(){
 
     box2.innerHTML = ""
+    assignamentContainer.innerHTML = ""
     box1.innerHTML = formUf()
     box2.innerHTML = getUfAll()
 

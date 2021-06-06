@@ -1,11 +1,31 @@
-header{
+/* header{
     min-width: 70em;
-    margin: 3em 0em 0em 2em;
+    margin: 0em;
+    padding: 1em;
+    background-color: #202C39;
+    color: #F4F6F7;
+} */
+.navBar{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    justify-content: start;
+    align-content: center;
+    background-color: #435058;
+    color: #F4F6F7;
+}
+.navBar p{
+    padding: 0.5em;
+    margin: 1em;
+    border-radius:  0.1em;
 }
 .point:hover{
     background-color: #3185FC;
     color: #FBFBFF;
     cursor: pointer;
+}
+.active{
+    background-color: #3185FC;
+    color: #FBFBFF;
 }
 .contain{
     padding: 1.5em;
@@ -14,11 +34,11 @@ header{
 }
 #container{
     min-width: 50em;
-    padding: 0em;
-    margin: 2em 1em; 
+    /* padding: 0em; */
+    height: 26em; 
+    margin: 1em;
     display: grid;
     grid-template-columns: auto auto;
-    /* justify-content: space-between; */
     border: 0.0em solid;
     border-radius: 0.3em;
 }
@@ -27,15 +47,14 @@ header{
     border-bottom: 0.01em solid;
 }
 .grid-box{
+    /* height: 26em;  */
     margin: 0.2em;
     padding: 1.2em;
     border: 0.01em solid #F4F6F7;
-    background-color: #F7F9F9;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.12);
-
+    /* background-color: #F7F9F9; */
+    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.12); */
 }
-#second-box{
-    height: 45.2em;  
+.scrollBox{
     overflow: auto;
 }
 .grid-box::-webkit-scrollbar{
@@ -45,6 +64,7 @@ header{
     background-color: #757780;
     border-radius: 0em;
 }
+
 .names{
     width: 80%;
     padding: 0.04em 0.4em;
@@ -63,13 +83,20 @@ header{
 }
 /*formulary*/
 .grid-items-form{
-    margin: 0.6em;
+    width: 50%;
+    margin: 1em 0.6em;
 }
-.grid-items-form input[type ="text"]{
-    width: 17em;
-    padding: 0.3em;
+.fields{
+    width: 100%;
+    padding: 0.5em;
     border: 0.01em solid;
-    border-radius: 0.4em;
+    border-radius: 0.2em;
+}
+.select{
+    width: 30%;
+    padding: 0.1em;
+    border: 0.01em solid;
+    border-radius: 0.2em;
 }
 #title{
     padding: 0em 0.5em;
@@ -94,16 +121,22 @@ header{
 .input{
     display: grid;
     grid-template-columns: auto auto auto;
-    justify-content: center;    
+    justify-content: center;
 }
 /**********************************/
+#assignamentUf{
+    padding: 1.2em;
+    margin: 1em;
+    display: grid;
+    grid-template-columns: auto auto;
+}
 .assignment{
     display: grid;
     grid-template-columns: auto auto;
     /* justify-content: space-between; */
 }
 .assignTo{
-    margin: 0em 1em;    
+    margin: 0em 1em;
     padding: 0.05em 0.5em;
     font-size: 0.5em;
     border: 0.01em solid;

@@ -1,17 +1,19 @@
-import { box1, box2 } from "../index.js"
+import { assignamentContainer ,box1, box2 } from "../index.js"
 import { form, templeofUf } from "../view/forms.js"
 import { getTeachers } from "../controllers/getTeachers.js"
-import { assignament } from "../view/formUF.js"
+import { assignamentUf } from "../view/formUF.js"
 
 
 const manageTeacher = ()=>{
         
     getTeachers() //cargamos el listado de profesores
     loadUassignedUf()//cargamos las UF no asignadas
-
+    assignamentContainer.innerHTML = ""
+    box1.classList.remove("scrollBox")
     box1.innerHTML = form("Profesor")
-    const div = assignament()
-    box1.append(div)
+    //container to assigne  Uf
+    const div = assignamentUf()
+    assignamentContainer.append(div)
     
     let codeT
     const idUf = []

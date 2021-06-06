@@ -1,10 +1,10 @@
-const assignament = ()=>{
+const assignamentUf = ()=>{
     
     const div = document.createElement("div")  
     div.classList.add("assignment")
     div.innerHTML =  `
         <div class="u-box">
-            <h3>UF sin asignar</h3>
+            <h2>UF sin asignar</h2>
             <div class="uf-box" id="unassigned-box"></div>
         </div>
         <div class="u-box">
@@ -17,4 +17,4 @@ const assignament = ()=>{
     `
     return div
 }
-export {  assignament }
+export {  assignamentUf  }

@@ -1,11 +1,14 @@
-import {  box1 } from "../index.js"
+import { assignamentContainer ,box1 } from "../index.js"
 import { form } from "../view/forms.js"
 import { getStudent } from "./getStudent.js"
+
 
 function manageStudent(){
     
     getStudent(2)
     box1.innerHTML = form("Alumno")  
+    box1.classList.remove("scrollBox")
+    assignamentContainer.innerHTML = ""
 
     const aula = document.getElementById("aulas")
     const selectAulas = getAulas()
@@ -48,6 +51,8 @@ function getAulas(){
     const select = document.createElement("select")
     select.name = "aula"
     select.id = "aula"
+    select.classList.add("select")
+    
     function gettingAulas(){
 
         if(this.readyState === 4 && this.status === 200){
