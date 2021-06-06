@@ -6,6 +6,9 @@ function getStudent(flag){
     const num1 = 1
     const num2 = 2
     
+    box1.innerHTML = ""
+    box2.innerHTML = ""
+    
     if(flag === num1 )
          box1.innerHTML = "<h3>Lista de Alumnos</h3>"
     if(flag === num2)
@@ -19,14 +22,19 @@ function getStudent(flag){
     function getAllStudent(){
         if(this.readyState === 4 && this.status === 200){
             const obj = JSON.parse(this.responseText)
-            const form = document.createElement("div")
-            form.innerHTML = `<h3>Lista de Profesores</h3>`
-
+            const div = document.createElement("div")
+            
             if(flag === num1){
-                obj.forEach(e => {  box1.innerHTML += templeofUser(e)  })
+                obj.forEach(e => { 
+                    div.innerHTML += templeofUser(e)
+                    box1.appendChild(div)
+                 })
             }
             if(flag === num2 ){ 
-                obj.forEach(e => {  box2.innerHTML += templeofUser(e)  })
+                obj.forEach(e => {
+                    div.innerHTML += templeofUser(e)
+                    box2.appendChild(div)
+                })
             }
         }
     }

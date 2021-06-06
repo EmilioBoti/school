@@ -34,11 +34,11 @@
 }
 #container{
     min-width: 50em;
-    /* padding: 0em; */
     height: 26em; 
     margin: 1em;
     display: grid;
-    grid-template-columns: auto auto;
+    grid-template-columns: 49% 49%;
+    justify-content: center;
     border: 0.0em solid;
     border-radius: 0.3em;
 }
@@ -51,8 +51,8 @@
     margin: 0.2em;
     padding: 1.2em;
     border: 0.01em solid #F4F6F7;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
     /* background-color: #F7F9F9; */
-    /* box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.12); */
 }
 .scrollBox{
     overflow: auto;
@@ -64,6 +64,13 @@
     background-color: #757780;
     border-radius: 0em;
 }
+body::-webkit-scrollbar{
+    width: 0.4em;
+}
+body::-webkit-scrollbar-thumb{
+    background-color: #0077CC;
+    border-radius: 0.2em;
+}
 
 .names{
     width: 80%;
@@ -74,12 +81,7 @@
     transition: 0.2s ease-in all;
 }
 .names:hover{
-    /* font-weight: bold; */
     transform: scaleX(1.06);
-}
-
-#form{
-    margin: 2em 0em 6em 0em;
 }
 /*formulary*/
 .grid-items-form{
@@ -91,6 +93,7 @@
     padding: 0.5em;
     border: 0.01em solid;
     border-radius: 0.2em;
+    background-color: #F5F5F5;
 }
 .select{
     width: 30%;

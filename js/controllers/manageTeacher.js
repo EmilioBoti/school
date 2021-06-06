@@ -3,14 +3,15 @@ import { form, templeofUf } from "../view/forms.js"
 import { getTeachers } from "../controllers/getTeachers.js"
 import { assignamentUf } from "../view/formUF.js"
 
-
 const manageTeacher = ()=>{
         
     getTeachers() //cargamos el listado de profesores
     loadUassignedUf()//cargamos las UF no asignadas
+    
     assignamentContainer.innerHTML = ""
     box1.classList.remove("scrollBox")
     box1.innerHTML = form("Profesor")
+    
     //container to assigne  Uf
     const div = assignamentUf()
     assignamentContainer.append(div)
