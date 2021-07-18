@@ -5,6 +5,9 @@
     background-color: #202C39;
     color: #F4F6F7;
 } */
+body{
+    font-family: 'Poppins', sans-serif;
+}
 .navBar{
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -47,12 +50,10 @@
     border-bottom: 0.01em solid;
 }
 .grid-box{
-    /* height: 26em;  */
     margin: 0.2em;
     padding: 1.2em;
     border: 0.01em solid #F4F6F7;
     box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.1);
-    /* background-color: #F7F9F9; */
 }
 .scrollBox{
     overflow: auto;

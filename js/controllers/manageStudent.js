@@ -12,12 +12,12 @@ function manageStudent(){
 
     const aula = document.getElementById("aulas")
     const selectAulas = getAulas()
-    aula.appendChild( selectAulas)
+    aula.appendChild(selectAulas)
 
     //enviamos datos del estudiante
     const f = document.getElementById("form")
     f.addEventListener("submit", (e)=>{
-        e.preventDefault()
+        // e.preventDefault()
         addStudent(f)
     })
 }
@@ -25,21 +25,17 @@ function manageStudent(){
 function addStudent(f){
     
     const ft = new FormData(f)
-    const reqAddSt = new XMLHttpRequest()
-
-    reqAddSt.onreadystatechange = addingStudent
-    reqAddSt.open("POST", "http://localhost/studies/backend/addStudent.php")
-    reqAddSt.send(ft)
-
-    function addingStudent(){
-        if(this.readyState === 4 && this.status === 200){
-            const obj = JSON.parse(this.responseText)
-            // console.log(obj)
-            getStudent(2)
-            if( obj !== null )
-                addingUfs(obj)
-        }
-    }
+    fetch("http://localhost/studies/backend/addStudent.php", {
+        method: "POST",
+        body: ft
+    })
+    .then((data)=>{ return data.json() })
+    .then((obj)=>{
+        getStudent(2)
+        console.log(obj)
+        if(obj !== null )
+            addingUfs(obj)
+    })
 }
 function getAulas(){
 
