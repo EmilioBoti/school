@@ -7,7 +7,7 @@ function ufStudent(codeSt){
     const req = new XMLHttpRequest()
         
     req.onreadystatechange = getUfStudent
-    req.open("POST", `http://localhost/studies/backend/uf/ufStudent.php/`)
+    req.open("POST", `../../backend/uf/ufStudent.php/`)
     req.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
     req.send(JSON.stringify(ob))
 

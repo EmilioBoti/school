@@ -16,7 +16,7 @@ function manageUf(){
         const reqAddUf = new XMLHttpRequest()
 
         reqAddUf.onreadystatechange = addUf
-        reqAddUf.open("POST", "http://localhost/studies/backend/uf/addUf.php")
+        reqAddUf.open("POST", "../../backend/uf/addUf.php")
         reqAddUf.send(f)
 
         function addUf(){
@@ -35,7 +35,7 @@ function getUfAll(){
     const reqGetUf = new XMLHttpRequest()
 
     reqGetUf.onreadystatechange = getUf
-    reqGetUf.open("GET", "http://localhost/studies/backend/uf/getAllUf.php")
+    reqGetUf.open("GET", "../../backend/uf/getAllUf.php")
     reqGetUf.send()
 
     function getUf(){
@@ -55,7 +55,7 @@ function matriculate(){
     //matriculamos a los Alumnos
     const req = new XMLHttpRequest()
     req.onreadystatechange = matriculateStudent
-    req.open("GET", "http://localhost/studies/backend/matriculate.php")
+    req.open("GET", "../../backend/matriculate.php")
     req.send()
     
     function matriculateStudent(){

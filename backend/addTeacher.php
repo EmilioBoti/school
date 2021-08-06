@@ -7,7 +7,6 @@
 
     if( $name != "" && $lastname1 != "" && $lastname2 != ""){
         addTeacher($name, $lastname1, $lastname2, $conn);
-        // addUfStudent($codeStudent, $conn);
     }else echo(json_encode(["massange"=>"All field must be fill."])); 
 
     

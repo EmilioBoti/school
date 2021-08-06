@@ -61,7 +61,7 @@ function manageEvaluation(){
         }
         const http = new XMLHttpRequest()
         http.onreadystatechange = update
-        http.open("POST", "http://localhost/studies/backend/updateScore.php")
+        http.open("POST", "../../backend/updateScore.php")
         http.send(JSON.stringify(ob))
 
         function update(){
@@ -88,7 +88,7 @@ function manageEvaluation(){
         const requF = new XMLHttpRequest()
 
         requF.onreadystatechange = getUfStudent
-        requF.open("POST", `http://localhost/studies/backend/uf/ufStudent.php/`)
+        requF.open("POST", `../../backend/uf/ufStudent.php/`)
         requF.setRequestHeader("Content-Type", "application/json; charset=UTF-8")
         requF.send(JSON.stringify(ob))
     

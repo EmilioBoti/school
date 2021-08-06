@@ -2,28 +2,42 @@
 
 const form = (name)=>{
 
-    const  stForm  = `
-        <form  method="POST" name="form" id="form" class="grid-items">
+    const  studentForm  = `
+    <section class="student-container">
+        <form  method="POST" name="form" enctype="multipart/form-data" id="form" class="form-student">
             <h2 id="title">Registrar ${name}</h2>
-            <div class="grid-items-form">
-                <input type="text" class="fields" id="name" name="name" placeholder="Name" required >
+            <div class="form-login-item">
+                <label for="name">Name</label>
+                <input type="text" class="input-field" id="name" name="name" placeholder="Name" required >
             </div>
-            <div class="grid-items-form">
-                <input type="text" class="fields" id="lastname1" name="lastname1" placeholder="Primer Apellido" required >
+            <div class="form-login-item">
+                <label for="lastname1">Fisrt Lastname</label>
+                <input type="text" class="input-field" id="lastname1" name="lastname1" placeholder="Primer Apellido" required >
             </div>
-            <div class="grid-items-form">
-                <input type="text" class="fields" id="lastname2" name="lastname2" placeholder="Segundo Apellido" required >
+            <div class="form-login-item">
+                <label for="lastname2">Second Lastname</label>
+                <input type="text" class="input-field" id="lastname2" name="lastname2" placeholder="Segundo Apellido" required >
             </div>
-            <div id = "aulas" class="grid-items-form"></div>
-            <div class="grid-items-form">
-                <input type="submit" value="Alta" id="send" class="send">
+            <div class="form-login-item">
+                <label for="email">Email</label>
+                <input type="email" class="input-field" id="mail" name="email" placeholder="Email" required >
+            </div>
+            <select id="course" class="grid-items-form" name = "course">
+            </select>
+            <div class="form-login-item">
+                <input type="submit" value="Alta" id="send" class="btn">
             </div>
         </form>
+        <div class="showStudent">
+            <h3>Student Register</h3>
+            <div class="student-collect" id="student-collect">
+            </div>
+        </div>            
+    </section>
     ` 
-    return stForm
+    return studentForm
 }
 const formUf = ()=>{
-
     const form =  `
         <form class="row g-3" id="formUf">
             <div class="col-auto">
@@ -39,10 +53,12 @@ const formUf = ()=>{
     `
     return form
 }
+
 const templeofUser = (obj)=>{
     const user =  `<p class ="names" data-code=${obj.id}>${obj.name} ${obj.lastname1} (${obj.aulaId})</p>`
     return user
 }
+
 const templeofUf = (obj)=>{
     const user =  `<p class ="names" data-id=${obj.id}>${obj.title}</p>`
     return user

@@ -1,0 +1,22 @@
+a curso has class and a class has ufs
+
+
+example:
+
+DAM1: -> classes:
+
+	Programming,
+	Programming Web,
+	system informatic,
+	Data base 
+
+classes->uf
+	
+	Programming:
+		uf1, uf2, uff3, etc.
+	programing web:
+		uf1, uf2, uff3, etc.
+	System informatic:
+		uf1, uf2, uff3, etc.
+	Data base:
+		uf1, uf2, uff3, etc.

@@ -3,29 +3,29 @@ import { form } from "../view/forms.js"
 import { getStudent } from "./getStudent.js"
 
 
-function manageStudent(){
+// function manageStudent(){
     
-    getStudent(2)
-    box1.innerHTML = form("Alumno")  
-    box1.classList.remove("scrollBox")
-    assignamentContainer.innerHTML = ""
+//     getStudent(2)
+//     box1.innerHTML = form("Alumno")  
+//     box1.classList.remove("scrollBox")
+//     assignamentContainer.innerHTML = ""
 
-    const aula = document.getElementById("aulas")
-    const selectAulas = getAulas()
-    aula.appendChild(selectAulas)
+//     const aula = document.getElementById("aulas")
+//     const selectAulas = getAulas()
+//     aula.appendChild(selectAulas)
 
-    //enviamos datos del estudiante
-    const f = document.getElementById("form")
-    f.addEventListener("submit", (e)=>{
-        // e.preventDefault()
-        addStudent(f)
-    })
-}
+//     //enviamos datos del estudiante
+//     const f = document.getElementById("form")
+//     f.addEventListener("submit", (e)=>{
+//         // e.preventDefault()
+//         addStudent(f)
+//     })
+// }
 
 function addStudent(f){
     
     const ft = new FormData(f)
-    fetch("http://localhost/studies/backend/addStudent.php", {
+    fetch("../../backend/addStudent.php", {
         method: "POST",
         body: ft
     })
@@ -42,8 +42,9 @@ function getAulas(){
     const reqAddSt = new XMLHttpRequest()
 
     reqAddSt.onreadystatechange = gettingAulas
-    reqAddSt.open("GET", "http://localhost/studies/backend/getAulas.php")
+    reqAddSt.open("GET", "../../backend/getAulas.php")
     reqAddSt.send()
+    
     const select = document.createElement("select")
     select.name = "aula"
     select.id = "aula"
@@ -71,7 +72,7 @@ function addingUfs(object){
     const reqAddSt = new XMLHttpRequest()
 
     reqAddSt.onreadystatechange = addingUf
-    reqAddSt.open("POST", "http://localhost/studies/backend/addAllUfStudent.php")
+    reqAddSt.open("POST", "../../backend/addAllUfStudent.php")
     reqAddSt.setRequestHeader("Content-Type", "application/json")
     reqAddSt.send(JSON.stringify(object))
 
@@ -83,4 +84,4 @@ function addingUfs(object){
     }
 }
 
-export { manageStudent }
+export {  }

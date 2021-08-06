@@ -32,7 +32,7 @@ const manageTeacher = ()=>{
 
             const reqGetUf = new XMLHttpRequest()
             reqGetUf.onreadystatechange = getUfStudent
-            reqGetUf.open("POST", "http://localhost/studies/backend/ufTeacher.php")
+            reqGetUf.open("POST", "../../backend/ufTeacher.php")
             reqGetUf.setRequestHeader("Content-Type", "application/json")
             reqGetUf.send(JSON.stringify({"code": codeT}))
     
@@ -73,7 +73,7 @@ const manageTeacher = ()=>{
         const req = new XMLHttpRequest()
 
         req.onreadystatechange = sendData
-        req.open("POST", "http://localhost/studies/backend/uf/assignUf.php/")
+        req.open("POST", "../../backend/uf/assignUf.php/")
         req.setRequestHeader("Content-Type", "application/json")
         req.send(JSON.stringify(obj))  
         
@@ -94,7 +94,7 @@ const manageTeacher = ()=>{
         const req = new XMLHttpRequest()
 
         req.onreadystatechange = addingStudent
-        req.open("POST", "http://localhost/studies/backend/addTeacher.php")
+        req.open("POST", "../../backend/addTeacher.php")
         req.send(ft)
 
         function addingStudent(){
@@ -110,7 +110,7 @@ const manageTeacher = ()=>{
 
         const reqUf = new XMLHttpRequest()
         reqUf.onreadystatechange = ufUnassigned
-        reqUf.open("GET", "http://localhost/studies/backend/uf/ufUnassigned.php")
+        reqUf.open("GET", "../../backend/uf/ufUnassigned.php")
         reqUf.send()
 
         function ufUnassigned(){

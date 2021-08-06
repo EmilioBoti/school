@@ -1,0 +1,52 @@
+CREATE TABLE student(
+	id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar(40) NOT null,
+    firstLastname varchar(45) NOT null,
+    secondLastname varchar(45) NOT null,
+    email varchar(100) NOT null UNIQUE,
+    course_id int(11) NOT null
+);
+CREATE TABLE teacher(
+	id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar(40) NOT null,
+    firstLastname varchar(45) NOT null,
+    secondLastname varchar(45) NOT null,
+    email varchar(100) NOT null UNIQUE,
+    password varchar(100) NOT null UNIQUE
+);
+CREATE TABLE course(
+	id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255) NOT null
+);
+CREATE TABLE class(
+	id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255) NOT null,
+    teacher_id int(11)
+);
+CREATE TABLE course_class(
+	course_id int(11) NOT null,
+    class_id int(11) not null
+);
+CREATE TABLE teacher_class(
+	teacher_id int(11) NOT null,
+    class_id int(11) not null
+);
+
+ALTER TABLE course_class ADD CONSTRAINT FK_courseID FOREIGN KEY(course_id) REFERENCES course(id);
+ALTER TABLE course_class ADD CONSTRAINT FK_classID FOREIGN KEY(class_id) REFERENCES class(id);
+
+ALTER TABLE student ADD CONSTRAINT FK_id_course FOREIGN KEY(course_id) REFERENCES course(id);
+
+ALTER TABLE teacher_class ADD CONSTRAINT FK_id_of_teacher FOREIGN KEY(teacher_id) REFERENCES teacher(id);
+ALTER TABLE teacher_class ADD CONSTRAINT FK_id_of_class FOREIGN KEY(class_id) REFERENCES class(id);
+
+CREATE TABLE uf(
+	id int(11) NOT null AUTO_INCREMENT PRIMARY KEY,
+    name varchar(255) NOT null,
+    class_id int(11) NOT null
+);
+ALTER TABLE uf ADD CONSTRAINT FK_clas_of_id FOREIGN KEY(class_id) REFERENCES class(id);
+
+
+
+

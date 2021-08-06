@@ -5,7 +5,7 @@ function getTeachers(){
     
     const reqT = new XMLHttpRequest()
     reqT.onreadystatechange = getAllTeachers
-    reqT.open("GET", "http://localhost/studies/backend/getAllTeachers.php")
+    reqT.open("GET", "../../backend/getAllTeachers.php")
     reqT.send()
 
     function getAllTeachers(){

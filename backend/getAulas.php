@@ -1,18 +1,18 @@
 <?php
-               $conn = include "db.php";
+    $conn = include "db.php";
 
-               $sqlQuery = "SELECT * FROM aulas";
-               $result =  $conn->query($sqlQuery) ;
+    $sqlQuery = "SELECT * FROM course";
+    $result =  $conn->query($sqlQuery) ;
 
-               $arrAulas =  Array();
+    $course =  Array();
 
-               while($row = $result->fetch_object()){
-                              $arrAulas[] = json_decode(json_encode($row));
-               }
-               echo json_encode($arrAulas);
-               
-               echo $conn->error;
-               $result->free();
-               $conn->close();
+    while($row = $result->fetch_object()){
+        $course[] = json_decode(json_encode($row));
+    }
+    echo json_encode($course);
+    
+    echo $conn->error;
+    $result->free();
+    $conn->close();  
 
 ?>
