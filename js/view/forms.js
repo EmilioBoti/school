@@ -22,7 +22,8 @@ const form = (name)=>{
                 <label for="email">Email</label>
                 <input type="email" class="input-field" id="mail" name="email" placeholder="Email" required >
             </div>
-            <select id="course" class="grid-items-form" name = "course">
+            <select id="course" class="select" name = "course">
+                <option value="0">Course</option>
             </select>
             <div class="form-login-item">
                 <input type="submit" value="Alta" id="send" class="btn">
@@ -30,8 +31,7 @@ const form = (name)=>{
         </form>
         <div class="showStudent">
             <h3>Student Register</h3>
-            <div class="student-collect" id="student-collect">
-            </div>
+            <div class="student-collect" id="student-collect"></div>
         </div>            
     </section>
     ` 

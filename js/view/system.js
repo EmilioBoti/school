@@ -1,4 +1,4 @@
-import { mainContainer } from "../index.js"
+import { mainContainer, active } from "../index.js"
 import { Services } from "../service/services.js"
 import { form } from "../view/forms.js"
 
@@ -21,8 +21,13 @@ export const system = ()=>{
     const systemContainer = document.getElementById("system-container")
     student(systemContainer)
 
+    const studen = document.getElementById("student")
+    const uf = document.getElementById("uf")
+    const teacher = document.getElementById("teacher")
+    const evaluation = document.getElementById("evalution")
+    
     navBar.addEventListener("click", (e)=>{
-        const nav = e.target.dataset.n
+        const nav = e.target
         if(nav !== undefined){
             routerSystem(systemContainer,nav)
         }
@@ -31,12 +36,23 @@ export const system = ()=>{
 function routerSystem(systemContainer, page, obj){
 
     systemContainer.innerHTML = ""
-    switch(page){
+
+    switch(page.dataset.n || page.dataset.edit){
         case "student":
+            active(1)
             student(systemContainer)
         break; 
         case "uf":
+            active(2)
             systemContainer.innerHTML = "UF Page"
+        break; 
+        case "teacher":
+            active(3)
+            systemContainer.innerHTML = "Teacher Page"
+        break; 
+        case "score":
+            active(4)
+            systemContainer.innerHTML = "Score Page"
         break; 
         case "edit":
             editStudent(systemContainer, obj)
@@ -72,12 +88,13 @@ function student(systemContainer){
 
         service.addingStudent(formD)
             .then(data =>{
-                console.log(data)
+                //console.log(data)
                 gettingStudent(service, studentContainer,systemContainer)
             })
     })
 }
 function gettingStudent(service, studentContainer, systemContainer){
+
     studentContainer.innerHTML = ""
     service.getStudents().then((student) =>{
         student.forEach((e,i)=>{
@@ -103,18 +120,15 @@ function gettingStudent(service, studentContainer, systemContainer){
         edition.addEventListener("click", (e)=>{
             if(e.target.dataset.edit){
                 if(e.target.dataset.edit === "edit"){
-                    routerSystem(systemContainer, "edit", student[e.target.dataset.boxid])
+                    routerSystem(systemContainer, e.target, student[e.target.dataset.boxid])
                 }
                 if(e.target.dataset.edit === "delete"){
                     console.log(e.target.dataset.id)
+                    console.log(e.target.dataset.boxid)
                     const data = { "id": e.target.dataset.id }
                     
-                    // let conf = confirm("Are you sure?")
-
-                    // if(conf){
-                        edition.removeChild(collectStudent[e.target.dataset.boxid])
-                        service.deleteStudent(data).then(data => console.log(data))
-                    // }
+                    edition.removeChild(collectStudent[e.target.dataset.boxid])
+                    service.deleteStudent(data).then(data => console.log(data))
                 }
             }
         })
@@ -174,7 +188,7 @@ function  formStudent(obj){
                 <label for="email">Email</label>
                 <input type="email" class="input-field" id="mail" name="email" value ="${obj.email}" placeholder="Email" required >
             </div>
-            <select id="course" class="grid-items-form" name = "course"></select>
+            <select id="course" class="select" name = "course"></select>
             <div class="form-login-item">
                 <input type="button" value="Alta" id="send" class="btn">
             </div>

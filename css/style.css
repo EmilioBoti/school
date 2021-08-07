@@ -3,31 +3,44 @@
     padding: 0em;
     box-sizing: border-box;
 }
+:root{
+    --bg-color: #FDFFFC;
+    --b-color: #3185FC;
+    --error-color: #F40105;
+}
 body{
     font-family: 'Poppins', sans-serif;
 }
+/**********main-container**********/
 /**********Header**********/
 .navBar{
+    width: 100vw;
+    position: fixed;
+    top: 0em;
+    left: 0em;
     display: grid;
     grid-template-columns: auto auto auto auto;
     justify-content: start;
     align-content: center;
-    background-color: #435058;
-    color: #F4F6F7;
+    border: 0.01em solid rgba(206, 206, 206, 0.5);
+    background-color: var(--bg-color);
+    /* color: #F4F6F7; */
 }
 .navBar p{
-    padding: 0.5em;
-    margin: 1em;
+    padding: 0.2em;
+    margin: 1em 0em 1em 2em;
+    font-size: 1.1em;
     border-radius:  0.1em;
 }
 .point:hover{
-    background-color: #3185FC;
-    color: #FBFBFF;
+    /* background-color: var(--b-color); */
+    /* color: #FBFBFF; */
+    color: var(--b-color);
     cursor: pointer;
 }
 .active{
-    background-color: #3185FC;
-    color: #FBFBFF;
+    /* background-color: var(--b-color); */
+    color: var(--b-color);
 }
 /*********Login Page**********/
 
@@ -65,9 +78,9 @@ body{
     /* content: attr(data-error); */
     transform: translateX(-50%);
     text-align: center;
-    border: 0.01em solid #F40105;
+    border: 0.01em solid var(--error-color);
     border-radius: 0.13em;
-    background-color: #F40105;
+    background-color: var(--error-color);
     color: #ffff;
     visibility: hidden;
 }
@@ -102,12 +115,13 @@ body{
 }
 .btn{
     width: max-content;
-    background-color:#2274A5;
+    background-color: var(--b-color);
     color: #fff;
 }
 /**********form-student*********/
 .student-container{
     padding: 1.2em 1.5em;
+    margin-top: 7em;
     display: flex;
     justify-content: space-between;
 }
@@ -146,6 +160,13 @@ body{
     font-weight: bolder;
     text-transform: capitalize;
 }
+.select{
+    width: 70%;
+    margin-top: 1.3em;
+    padding: 0.3em;
+    border-radius: 0.2em;
+    background-color: #fff;
+}
 .edit{
     width: max-content;
     display: flex;
@@ -155,7 +176,7 @@ body{
     margin-right: 0.8em;
 }
 .btn-edit:nth-child(1){
-    color: #F40105;
+    color: var(--error-color);
 }
 .btn-edit:hover:nth-child(1){
     cursor: pointer;
