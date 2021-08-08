@@ -1,12 +1,6 @@
 import { loginPage } from "./view/login.js"
 import { router } from "./router.js"
 
-// import { header } from "./view/header.js"
-// import {  manageStudent  } from "./controllers/manageStudent.js"
-// import {  manageUf } from "./controllers/manageUf.js"
-// import {  manageTeacher  } from "./controllers/manageTeacher.js"
-// import { manageEvaluation } from "./controllers/manageEvaluation.js"
-
 export const mainContainer = document.getElementById("main-container")
 loginPage()
 
@@ -14,37 +8,6 @@ window.addEventListener("hashchange", ()=>{
   const location = window.location.hash
   router(location)
 })
-
-
-/**************old version***************/
-//console.log(formData.getAll(name))
-
-// const assignamentContainer = document.getElementById("assignamentUf")
-// const box1 = document.getElementById("first-box")
-// const box2 = document.getElementById("second-box")
-
-// manageStudent()
-
-// const student = document.getElementById("student")
-// student.addEventListener("click", ()=>{
-//   active(1)
-//   manageStudent()
-// })
-// const uf = document.getElementById("uf")
-// uf.addEventListener("click", ()=>{
-//   active(2)
-//   manageUf()  
-// })
-// const teacher = document.getElementById("teacher")
-// teacher.addEventListener("click", ()=>{
-//   active(3)
-//   manageTeacher ()  
-// })
-// const evaluation = document.getElementById("evaluation")
-// evaluation.addEventListener("click", ()=>{
-//   active(4)
-//   manageEvaluation()
-// })
 
 export function active(status){
 

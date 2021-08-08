@@ -7,7 +7,7 @@ export const system = ()=>{
     const head = `
         <header>
             <nav class="navBar" id="navbar">
-                <p class="point active" data-n = "student"  id="student">Gestión de Alumnos</p>
+                <p class="point active" data-n = "student" id="student">Gestión de Alumnos</p>
                 <p class="point" data-n = "uf" id="uf">Gestión de UF</p>
                 <p class="point" data-n = "teacher" id="teacher">Gestión de Profesores</p>
                 <p class="point" data-n = "score" id="evaluation">Evaluaciones</p>
@@ -21,11 +21,11 @@ export const system = ()=>{
     const systemContainer = document.getElementById("system-container")
     student(systemContainer)
 
-    const studen = document.getElementById("student")
-    const uf = document.getElementById("uf")
-    const teacher = document.getElementById("teacher")
-    const evaluation = document.getElementById("evalution")
-    
+    // const studen = document.getElementById("student")
+    // const uf = document.getElementById("uf")
+    // const teacher = document.getElementById("teacher")
+    // const evaluation = document.getElementById("evalution")
+
     navBar.addEventListener("click", (e)=>{
         const nav = e.target
         if(nav !== undefined){
@@ -35,13 +35,12 @@ export const system = ()=>{
 } 
 function routerSystem(systemContainer, page, obj){
 
-    systemContainer.innerHTML = ""
-
     switch(page.dataset.n || page.dataset.edit){
         case "student":
             active(1)
+            systemContainer.innerHTML = ""
             student(systemContainer)
-        break; 
+            break; 
         case "uf":
             active(2)
             systemContainer.innerHTML = "UF Page"
@@ -49,14 +48,14 @@ function routerSystem(systemContainer, page, obj){
         case "teacher":
             active(3)
             systemContainer.innerHTML = "Teacher Page"
-        break; 
+            break; 
         case "score":
             active(4)
             systemContainer.innerHTML = "Score Page"
-        break; 
+            break; 
         case "edit":
             editStudent(systemContainer, obj)
-        break; 
+            break; 
     }
 }
 function student(systemContainer){
